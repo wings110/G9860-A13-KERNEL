@@ -47,8 +47,9 @@ jobs:
 
     - name: 开始编译内核
       run: |
-        make clean
+        
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
+        make clean
         export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$GITHUB_WORKSPACE/kernel_workspace/gcc64/bin:$GITHUB_WORKSPACE/kernel_workspace/gcc32/bin:$PATH
         make -s -j$(nproc --all) O=out CC="ccache clang" ARCH=arm64 SUBARCH=arm64 CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-android- vendor/y2q_chn_openx_defconfig
         make -j$(nproc --all) O=out CC="ccache clang" ARCH=arm64 SUBARCH=arm64 CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-android-
