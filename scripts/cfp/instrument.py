@@ -1074,7 +1074,7 @@ def parse_sections(vmlinux):
     section_idx = 0
     while True:
         try:
-            line = it.next()
+            line = next(it)
         except StopIteration:
             break
 
@@ -1107,7 +1107,7 @@ def parse_sections(vmlinux):
                 [int, ['number']],
                 [parse_power, ['align']]]))
 
-            line = it.next()
+            line = next(it)
             # CONTENTS, ALLOC, LOAD, READONLY, CODE
             m = re.search((
             r'\s+(?P<type>.*)'
