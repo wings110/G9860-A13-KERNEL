@@ -45,14 +45,6 @@ jobs:
       run: |
           chmod -R +x $GITHUB_WORKSPACE/kernel_workspace/
 
-    - name: 安装 ksu
-      run: |
-        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
-
-    - name: 查看目录
-      run: |
-        ls
-        
     - name: 设置ccache缓存
       uses: hendrikmuhs/ccache-action@v1.2
       with:
