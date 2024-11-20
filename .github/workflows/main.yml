@@ -39,7 +39,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang-aosp
-        git clone https://github.com/Google-Pixel-3-XL/clang-r416183b.git --depth 1 clang-aosp
+        git clone https://github.com/wings110/llvm-arm-toolchain-ship-10.0.git --depth 1 clang-aosp
 
     
     - name: 下载内核源码
