@@ -45,7 +45,7 @@ jobs:
     - name: 下载内核源码
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone https://github.com/wings110/G9860-KERNEL.git android-kernel --depth=1
+        git clone https://github.com/wings110/G9860-A13-KERNEL.git android-kernel --depth=1
 
     - name: sudo chmod+x
       run: |
