@@ -1074,7 +1074,7 @@ def parse_sections(vmlinux):
     section_idx = 0
     while True:
         try:
-            line = next(it)
+            line = it.next()
         except StopIteration:
             break
 
@@ -1107,7 +1107,7 @@ def parse_sections(vmlinux):
                 [int, ['number']],
                 [parse_power, ['align']]]))
 
-            line = next(it)
+            line = it.next()
             # CONTENTS, ALLOC, LOAD, READONLY, CODE
             m = re.search((
             r'\s+(?P<type>.*)'
@@ -1303,7 +1303,7 @@ if common.run_from_ipython():
     #import pdb; pdb.set_trace()
     o = load_and_cache_objdump(sample_vmlinux_file, config_file=sample_config_file)
 
-    print("in function common.run_from_ipython()")
+    print "in function common.run_from_ipython()"
 
     def _instrument(func=None, skip=common.skip, validate=True, threads=DEFAULT_THREADS):
         instrument(o, func=func, skip=common.skip, skip_stp=common.skip_stp, skip_asm=common.skip_asm, threads=threads)
